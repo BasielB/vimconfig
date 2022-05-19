@@ -14,6 +14,7 @@ set.so=999                          -- Курсор всегда в центре
 set.undofile = true                 -- Возможность отката назад
 set.splitright = true               -- vertical split вправо
 set.splitbelow = true               -- horizontal split вниз
+set.swapfile = false                -- disable of creating swap files
 -----------------------------------------------------------
 -- Табы и отступы
 -----------------------------------------------------------
