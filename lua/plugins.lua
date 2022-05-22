@@ -9,6 +9,10 @@ return require('packer').startup(function()
     -----------------------------------------------------------
     -- Цветовая схема
     use 'joshdick/onedark.vim'
+
+    use "EdenEast/nightfox.nvim"
+
+    use 'mhartington/oceanic-next'
     --- Информационная строка внизу
     use { 'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},}

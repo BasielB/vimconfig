@@ -1,16 +1,10 @@
 local cmd = vim.cmd             -- execute Vim commands
 local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
-local opt = vim.opt             -- global/buffer/windows-scoped options
 -- Направление перевода с русского на английский
 g.translate_source = 'ru'
 g.translate_target = 'en'
-----------------------------------------------------------
--- Цветовая схема
------------------------------------------------------------
-opt.termguicolors = true      --  24-bit RGB colors
-cmd'colorscheme onedark'
--- don't auto commenting new lines
+-- -- don't auto commenting new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- remove line lenght marker for selected filetypes
 cmd [[autocmd FileType text,markdown,html,xhtml,javascript setlocal cc=0]]

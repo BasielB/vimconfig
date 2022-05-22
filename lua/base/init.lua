@@ -31,5 +31,3 @@ set.smarttab = true
 -- Цветовая схема
 -----------------------------------------------------------
 set.termguicolors = true      --  24-bit RGB colors
-cmd'colorscheme onedark'
-
