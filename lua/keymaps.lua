@@ -3,17 +3,19 @@ local default_opts = {noremap = true, silent = true}
 
 -- Типа 'Нажимает' на ESC при быстром нажатии jk, чтобы не тянутся
 map('i', 'jk', '<Esc>', {noremap = true})
+
 -- Rename Space as leader key
 map('', '<Space>', '<Nop>', default_opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
 -- Normal --
 -- Better window navigation
 map('n', '<C-h>', '<cmd>lua require"smart-splits".move_cursor_left()<cr>', default_opts)
 map('n', '<C-j>', '<cmd>lua require"smart-splits".move_cursor_down()<cr>', default_opts)
 map('n', '<C-k>', '<cmd>lua require"smart-splits".move_cursor_up()<cr>', default_opts)
-
 map('n', '<C-l>', '<cmd>lua require"smart-splits".move_cursor_right()<cr>', default_opts)
+
 -- Resize window with arrows
 map('n', '<C-Up>', '<cmd>lua require"smart-splits".resize_up(2)<cr>', default_opts)
 map('n', '<C-Down>', '<cmd>lua require"smart-splits".resize_down(2)<cr>', default_opts)
@@ -47,6 +49,17 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", default_opts)
 
 -- TagBar
 map("n", "<leader>o", ":TagbarToggle<CR>", default_opts)
+
+-- Hop (easy motion). Navigation in text
+map('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+map('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+map('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+map('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
+map('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+map('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+-- map('n', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+-- map('v', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
+-- map('o', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>", {})
 
 -- fzf
 -- map('n', '<C-a>', [[ <cmd>lua require('telescope.builtin').find_files()<cr> ]], default_opts)
