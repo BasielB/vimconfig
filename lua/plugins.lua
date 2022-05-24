@@ -39,7 +39,19 @@ return require('packer').startup(function()
     config = function() require'nvim-tree'.setup {} end, }
     -- Навигация внутри файла по классам и функциям
     use 'majutsushi/tagbar'
-    -- Замена fzf и ack
+    -- Быстрая навигация по тексту
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v1', -- optional but strongly recommended
+      config = function()
+        -- you can configure Hop the way you like here; see :h hop-config
+        require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      end
+    }
+
+    -----------------------------------------------------------
+    -- Поиск
+    -----------------------------------------------------------
     use { 'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
     config = function() require'telescope'.setup {} end, }
