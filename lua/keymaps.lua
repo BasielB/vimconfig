@@ -52,7 +52,7 @@ map("n", "<leader>o", ":TagbarToggle<CR>", default_opts)
 
 -- Hop (easy motion). Navigation in text
 map('n', 'f', ":HopWordCurrentLine<CR>", default_opts)
-map('n', 'F', ":HopLine<CR>", default_opts)
+map('n', 'F', ":HopWord<CR>", default_opts)
 
 
 -- fzf

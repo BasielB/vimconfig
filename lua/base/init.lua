@@ -61,6 +61,7 @@ set.smarttab = true
 -----------------------------------------------------------
 set.termguicolors = true      --  24-bit RGB colors
 
+set.timeoutlen = 300
 
 -- Направление перевода с русского на английский
 g.translate_source = 'ru'
